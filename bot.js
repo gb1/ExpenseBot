@@ -5,7 +5,7 @@ var moment = require('moment');
 var pdf = require('./pdf.js');
 var url = require('url');
 
-var token = fs.readFileSync('./slack_token.txt', 'utf8');
+var token = fs.readFileSync('./slack_token.txt', 'utf8').trim();
 
 var controller = Botkit.slackbot({
     debug: false
@@ -28,6 +28,7 @@ controller.hears('help','direct_message',function(bot,message) {
 
 controller.on('file_share',function(bot,message) {
 
+    console.log(message);
 
     if(message.text.includes('expense')){ //bot user?
         return;

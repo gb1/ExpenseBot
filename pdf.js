@@ -13,7 +13,7 @@ module.exports = {
         path: '',
         method: 'GET',
         headers: {
-            'Authorization' : 'Bearer ' + fs.readFileSync('./slack_token.txt', 'utf8')
+            'Authorization' : 'Bearer ' + fs.readFileSync('./slack_token.txt', 'utf8').trim()
         }
     },
 
